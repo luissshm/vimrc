@@ -1,0 +1,129 @@
+########################################
+# BIBTEX ENTRY SNIPPETS
+########################################
+
+# Webpage entry (@online)
+snippet bibonline "BibTeX: Online/Webpage" b
+	@online{${1:key},
+		author       = {${2:Author Name}},
+		title        = {${3:Webpage Title}},
+		year         = {${4:2025}},
+		url          = {${5:https://example.com}},
+		note         = {Accessed: `!v strftime("%Y-%m-%d")`}
+	}
+	$0
+
+
+# Journal article entry (@article)
+snippet bibarticle "BibTeX: Journal Article" b
+	@article{${1:key},
+		author  = {${2:Author Name}},
+		title   = {${3:Article Title}},
+		journal = {${4:Journal Name}},
+		year    = {${5:2025}},
+		volume  = {${6:1}},
+		number  = {${7:1}},
+		pages   = {${8:1--10}},
+		doi     = {${9:}}
+	}
+	$0
+
+
+# Book entry (@book)
+snippet bibbook "BibTeX: Book" b
+	@book{${1:key},
+		author    = {${2:Author Name}},
+		title     = {${3:Book Title}},
+		publisher = {${4:Publisher}},
+		year      = {${5:2025}},
+		edition   = {${6:1}},
+		isbn      = {${7:}}
+	}
+	$0
+
+
+# Conference paper entry (@inproceedings)
+snippet bibinproc "BibTeX: Conference Paper" b
+	@inproceedings{${1:key},
+		author    = {${2:Author Name}},
+		title     = {${3:Paper Title}},
+		booktitle = {${4:Conference Name}},
+		year      = {${5:2025}},
+		pages     = {${6:1--10}},
+		publisher = {${7:}},
+		doi       = {${8:}}
+	}
+	$0
+
+
+# Technical report entry (@techreport)
+snippet bibreport "BibTeX: Technical Report" b
+	@techreport{${1:key},
+		author      = {${2:Author Name}},
+		title       = {${3:Report Title}},
+		institution = {${4:Institution}},
+		year        = {${5:2025}},
+		number      = {${6:Report Number}},
+		url         = {${7:}}
+	}
+	$0
+
+
+# PhD Thesis
+snippet bibphd "BibTeX: PhD Thesis" b
+	@phdthesis{${1:key},
+		author    = {${2:Author Name}},
+		title     = {${3:Thesis Title}},
+		school    = {${4:University}},
+		year      = {${5:2025}},
+		url       = {${6:}}
+	}
+	$0
+
+# Master's Thesis
+snippet bibmaster "BibTeX: Master's Thesis" b
+	@mastersthesis{${1:key},
+		author    = {${2:Author Name}},
+		title     = {${3:Thesis Title}},
+		school    = {${4:University}},
+		year      = {${5:2025}},
+		url       = {${6:}}
+	}
+	$0
+
+
+# Software entry (@software)
+snippet bibsoftware "BibTeX: Software" b
+	@software{${1:key},
+		author       = {${2:Author/Team}},
+		title        = {${3:Software Name}},
+		version      = {${4:Version}},
+		url          = {${5:https://example.com}},
+		date         = {${6:2025-01-14}}
+	}
+	$0
+
+
+# Dataset entry (@dataset)
+snippet bibdataset "BibTeX: Dataset" b
+	@dataset{${1:key},
+		author       = {${2:Dataset Authors}},
+		title        = {${3:Dataset Title}},
+		year         = {${4:2025}},
+		url          = {${5:https://example.com}},
+		note         = {Accessed: `!v strftime("%Y-%m-%d")`}
+	}
+	$0
+
+
+# Generic entry (@misc)
+snippet bibmisc "BibTeX: Miscellaneous Entry" b
+	@misc{${1:key},
+		author       = {${2:Author}},
+		title        = {${3:Title}},
+		year         = {${4:2025}},
+		howpublished = {${5:Online}},
+		url          = {${6:https://example.com}},
+		note         = {${7:}}
+	}
+	$0

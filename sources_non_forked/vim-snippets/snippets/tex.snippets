@@ -7,24 +7,63 @@ snippet dcl \documentclass{}
 snippet dclo \documentclass[]{}
 	\\documentclass[${1:options}]{${2:class}} ${0}
 
-snippet tmplt "Template"
-	\\documentclass{${1:article}}
+snippet tmplt "Full LaTeX Template (English default)"
+	\\documentclass[a4paper,12pt]{article}
 
-	\\usepackage{import}
-	\\usepackage{pdfpages}
-	\\usepackage{transparent}
-	\\usepackage{xcolor}
-	$2
-	
-	\\newcommand{\incfig}[2][1]{%
-		    \def\svgwidth{#1\columnwidth}
-		    \import{./figures/}{#2.pdf_tex}
-	}
-	$3
-	\\pdfsuppresswarningpagegroup=1
-	
+	% Language
+	\\usepackage[${1:english}]{babel}
+
+	% Encoding
+	\\usepackage[utf8]{inputenc}
+
+	% Math packages
+	\\usepackage{amsmath}
+	\\usepackage{amsfonts}
+	\\usepackage{amssymb}
+
+	% Graphics and figures
+	\\usepackage{graphicx}
+	\\usepackage{float}
+	\\usepackage{caption}
+	\\usepackage{subcaption}
+
+	% Document layout
+	\\usepackage{parskip}      % Remove paragraph indentation and add spacing between paragraphs
+	\\usepackage{lmodern}
+
+	% Lists
+	\\usepackage{enumitem}
+
+	% Hyperlinks
+	\\usepackage{hyperref}
+
+
+	% BibLaTeX
+	\\usepackage[
+		backend=biber,
+		style=apa,   % or numeric, authoryear, apa, etc.
+		citestyle=numeric,
+		url=true,
+		doi=true
+	]{biblatex}
+
+	\\addbibresource{references.bib}
+
+	% Document metadata
+	\\title{${2:Title of this document}}
+	\\author{${3:Luis Herrera}}
+	\\date{\\today}
+
 	\\begin{document}
-		    $0
+
+	\\maketitle
+	\\newpage
+	\\tableofcontents
+	\\newpage
+
+	$0
+
+	\\printbibliography
 	\\end{document}
 
 #newcommand
@@ -228,22 +267,39 @@ snippet page reference to a page
 	${1:page}~\\pageref{${2}} ${0}
 snippet index \index
 	\\index{${1:index}} ${0}
-#Citations
-snippet citen \citen
-	\\citen{${1}} ${0}
-# natbib citations
-snippet citep \citep
-	\\citep{${1}} ${0}
-snippet citet \citet
-	\\citet{${1}} ${0}
-snippet cite \cite[]{}
-	\\cite[${1}]{${2}} ${0}
-snippet citea \citeauthor
-	\\citeauthor{${1}} ${0}
-snippet citey \citeyear
-	\\citeyear{${1}} ${0}
-snippet fcite \footcite[]{}
-	\\footcite[${1}]{${2}}${0}
+
+########################################
+# CITATION COMMAND SNIPPETS
+########################################
+
+# Regular citation
+snippet cite "Citation" i
+	\\cite{${1:key}}$0
+
+# Parenthetical citation
+snippet pcite "Parenthetical citation" i
+	\\parencite{${1:key}}$0
+
+# Textual citation (e.g. Turing (1936) states that…)
+snippet tcite "Textual citation" i
+	\\textcite{${1:key}}$0
+
+# Multiple citations
+snippet mcite "Multiple citations" i
+	\\cite{${1:key1}, ${2:key2}}$0
+
+# Cite title
+snippet ctitle "Cite title" i
+	\\citetitle{${1:key}}$0
+
+# Cite author
+snippet cauthor "Cite author" i
+	\\citeauthor{${1:key}}$0
+
+# Cite year
+snippet cyear "Cite year" i
+	\\citeyear{${1:key}}$0
+
 #Formating text: italic, bold, underline, small capital, emphase ..
 snippet ita italic text
 	\\textit{${1:${VISUAL:text}}}${0}
