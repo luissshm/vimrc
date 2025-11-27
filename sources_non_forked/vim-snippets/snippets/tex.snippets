@@ -37,6 +37,8 @@ snippet tmplt "Full LaTeX Template (English default)"
 	% Hyperlinks
 	\\usepackage{hyperref}
 
+	% Color Box
+	\\usepackage{tcolorbox}
 
 	% BibLaTeX
 	\\usepackage[
@@ -114,6 +116,9 @@ snippet gat gather(ed) environment
 	\\begin{gather${1:ed}}
 		${0:${VISUAL}}
 	\\end{gather$1}
+# Inline Equation
+snippet in "Inline math environment" i
+	\$${1:expression}\$$0
 # Equation
 snippet eq equation environment
 	\\begin{equation}
@@ -332,10 +337,26 @@ snippet mc mathcal
 snippet ms mathscr
 	\\mathscr{${1:${VISUAL:text}}}${0}
 #misc
+snippet note "Note box" b
+	\\begin{tcolorbox}[colback=blue!5,colframe=blue!70!black,title=Note]
+		${0:Content}
+	\\end{tcolorbox}
+snippet warn "Warning box" b
+	\\begin{tcolorbox}[colback=yellow!10,colframe=yellow!60!black,title=Warning]
+		${0:Content}
+	\\end{tcolorbox}
+snippet tip "Tip box" b
+	\\begin{tcolorbox}[colback=green!5,colframe=green!60!black,title=Tip]
+		${0:Content}
+	\\end{tcolorbox}
+snippet def "Definition box" b
+	\\begin{tcolorbox}[colback=purple!5,colframe=purple!75!black,title=\\textbf{Definition}]
+		${0:Place the definition text here}
+	\\end{tcolorbox}
 snippet ft \footnote
 	\\footnote{${1:${VISUAL:text}}}${0}
 snippet fig figure environment (includegraphics)
-	\\begin{figure}
+	\\begin{figure}[H]
 	\\begin{center}
 		\\includegraphics[scale=${1}]{Figures/${2}}
 	\\end{center}
