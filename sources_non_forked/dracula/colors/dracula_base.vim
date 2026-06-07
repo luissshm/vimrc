@@ -1034,6 +1034,37 @@ if has('nvim')
   hi! link BlinkCmpKindTypeParameter DraculaCyan
   " }}}
 
+  " folke/snacks.nvim {{{
+  hi! link SnacksPicker DraculaBgDark
+  hi! link SnacksPickerBorder DraculaBoundary
+  hi! link SnacksPickerTitle DraculaPurpleBold
+  hi! link SnacksPickerInput DraculaBgDark
+  hi! link SnacksPickerInputBorder DraculaBoundary
+  hi! link SnacksPickerInputTitle DraculaPurpleBold
+  hi! link SnacksPickerListCursorLine DraculaSelection
+
+  hi! link SnacksPickerPrompt DraculaPurple
+  hi! link SnacksPickerMatch DraculaCyan
+  hi! link SnacksPickerSelected DraculaPink
+  hi! link SnacksPickerUnselected DraculaSubtle
+
+  hi! link SnacksPickerFile DraculaFg
+  hi! link SnacksPickerDirectory Directory
+  hi! link SnacksPickerDir DraculaComment
+  hi! link SnacksPickerPathHidden DraculaComment
+  hi! link SnacksPickerPathIgnored DraculaComment
+
+  hi! link SnacksPickerGitStatusAdded DiffAdd
+  hi! link SnacksPickerGitStatusModified DiagnosticWarn
+  hi! link SnacksPickerGitStatusDeleted DiffDelete
+  hi! link SnacksPickerGitStatusRenamed DraculaYellow
+  hi! link SnacksPickerGitStatusCopied DraculaYellow
+  hi! link SnacksPickerGitStatusUntracked DraculaGreen
+  hi! link SnacksPickerGitStatusIgnored DraculaComment
+  hi! link SnacksPickerGitStatusUnmerged DiagnosticError
+  hi! link SnacksPickerGitStatusStaged DiagnosticHint
+  " }}}
+
   " nvim-tree/nvim-tree.lua {{{
   hi! link NvimTreeEmptyFolderName DraculaPurple
   hi! link NvimTreeExecFile DraculaGreen
